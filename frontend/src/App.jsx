@@ -15,7 +15,6 @@ function App() {
 
   return (
     <div>
-      <div>hello</div>
       <Header></Header>
       <Routes>
         <Route path= '/' element = {<Home/>}/>
