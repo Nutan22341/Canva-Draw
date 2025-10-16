@@ -6,15 +6,15 @@ const OAuth2Strategy = require("passport-google-oauth2").Strategy;
 const cors = require("cors");
 const userdb = require("./models/userSchema");
 require("./db/conn");
+const frontend = process.env.FRONTEND;
+const secretnumber = process.env.SECRET;
 
 const app = express();
 const PORT = 8000;
-
-const frontend = process.env.FRONTEND;
 app.use(express.json());
 app.use(cors({ origin: frontend, credentials: true }));
 app.use(session({
-  secret: "12387384738ufsufidjfi8k",
+  secret: secretnumber,
   resave: false,
   saveUninitialized: true
 }));
